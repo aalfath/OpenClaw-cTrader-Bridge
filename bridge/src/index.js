@@ -4,7 +4,7 @@ const { TradingBridgeClient } = require('./zmq-client');
 const { ACTIONS } = require('./protocol');
 
 class OpenClawBridge {
-    constructor(address = 'tcp://144.76.7.79:51590') {
+    constructor(address = 'tcp://144.76.7.79:51128') {
         this.client = new TradingBridgeClient(address);
     }
 

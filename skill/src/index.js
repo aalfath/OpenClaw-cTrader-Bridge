@@ -4,7 +4,7 @@ const path = require('path');
 const { TradingAgent } = require('./trading-agent');
 
 const config = {
-    bridgeAddress: process.env.BRIDGE_ADDRESS || 'tcp://144.76.7.79:51590',
+    bridgeAddress: process.env.BRIDGE_ADDRESS || 'tcp://144.76.7.79:51128',
     thesesDir: process.env.THESES_DIR || path.join(__dirname, '..', 'theses'),
     checkIntervalMs: parseInt(process.env.CHECK_INTERVAL_MS || '1800000', 10), // 30 minutes
 };

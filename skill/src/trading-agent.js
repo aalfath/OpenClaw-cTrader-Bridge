@@ -6,7 +6,7 @@ const { FundamentalChecker } = require('./fundamental-checker');
 
 class TradingAgent {
     constructor({ bridgeAddress, thesesDir, checkIntervalMs } = {}) {
-        this.bridge = new OpenClawBridge(bridgeAddress || 'tcp://144.76.7.79:51590');
+        this.bridge = new OpenClawBridge(bridgeAddress || 'tcp://144.76.7.79:51128');
         this.thesisManager = new ThesisManager(thesesDir);
         this.fundamentalChecker = new FundamentalChecker(checkIntervalMs);
     }
