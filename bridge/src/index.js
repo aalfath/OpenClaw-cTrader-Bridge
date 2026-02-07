@@ -62,6 +62,18 @@ class OpenClawBridge {
     async closeAllPositions() {
         return this.client.send(ACTIONS.CLOSE_ALL_POSITIONS, {}, 20000);
     }
+
+    async getPrice(symbol) {
+        return this.client.send(ACTIONS.GET_PRICE, { symbol }, 3000);
+    }
+
+    async getBars(symbol, timeframe = 'Hour4', count = 200) {
+        return this.client.send(ACTIONS.GET_BARS, { symbol, timeframe, count }, 15000);
+    }
+
+    async getMultiTimeframeBars(symbol, timeframes = { Daily: 120, Hour4: 200, Minute15: 100 }) {
+        return this.client.send(ACTIONS.GET_MULTI_TIMEFRAME_BARS, { symbol, timeframes }, 30000);
+    }
 }
 
 module.exports = { OpenClawBridge, TradingBridgeClient, ACTIONS };

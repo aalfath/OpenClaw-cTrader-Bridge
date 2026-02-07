@@ -11,6 +11,9 @@ const ACTIONS = {
     PARTIAL_CLOSE: 'partialClose',
     CLOSE_POSITION: 'closePosition',
     CLOSE_ALL_POSITIONS: 'closeAllPositions',
+    GET_PRICE: 'getPrice',
+    GET_BARS: 'getBars',
+    GET_MULTI_TIMEFRAME_BARS: 'getMultiTimeframeBars',
 };
 
 const RESPONSE_SUFFIX = 'Response';
