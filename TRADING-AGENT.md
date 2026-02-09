@@ -625,8 +625,13 @@ The `comment` links position to thesis.
 - Report: "SL hit, -$900"
 
 **Thesis Invalidated:**
-- News contradicts thesis
-- Close manually
+- News contradicts thesis OR price breaks invalidation level
+- Close manually via `trade.js close <positionId>`
+- **Update the thesis file** with:
+  - Exit price and P&L
+  - Reason for invalidation
+  - Lessons learned
+- Report to Agastya DM
 - Update thesis: Status = CLOSED, reason
 - Report: "Closed early — thesis invalid"
 
@@ -688,8 +693,16 @@ A thesis is invalidated when:
 - Brief post-trade note
 
 ### Where I Report
-- **Discord DM** to Agastya (user:257323788759203840)
+- **Discord DM ONLY** to Agastya (user:257323788759203840)
+- **NEVER** post to channels (no #robot, no group channels)
 - Keep it concise, no walls of text
+
+### Updating Thesis Files on Close
+When a trade closes (SL hit, TP hit, or manual close):
+1. **Update the original thesis file** with closure details
+2. Add a `## ❌ CLOSED` or `## ✅ WON` section at the bottom
+3. Include: exit price, P&L, reason for close, lessons learned
+4. This creates a permanent record of why trades were closed
 
 ### When to Ask First
 Initially, for the first few trades, I'll share the thesis and wait for Agastya's approval before executing. Once trust is established, I can go fully autonomous.

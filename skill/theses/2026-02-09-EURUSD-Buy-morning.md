@@ -27,13 +27,14 @@ Monday morning breakout above H4 high (1.18644). USD weakness confirmed by USDCH
 - European stocks rising Monday morning
 - General risk-on tone
 
-## Status: ACTIVE
+## Status: CLOSED — THESIS INVALIDATED
 Position ID: 579826027
-Last checked: 2026-02-09T09:10:00Z
+Closed: 2026-02-09T10:02:55Z
 
 ## Trade Log
 - 2026-02-09T09:02:46Z: Position opened at 1.18684 (thesis file created retroactively)
 - 2026-02-09T09:10:00Z: Price at 1.18655, P&L -$77 (normal drawdown)
+- 2026-02-09T10:02:55Z: **CLOSED** — Thesis invalidated. Price broke back below 1.18644 (failed breakout condition). Exit at 1.18616, net loss: -$186.06
 
 ## Notes
 - Thesis file created retroactively at 10:10 CET scan
