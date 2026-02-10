@@ -86,9 +86,36 @@ const commands = {
     await bridge.disconnect();
   },
 
-  async open(symbol, side, volume, sl, tp, comment) {
+  async open(...args) {
+    // Parse arguments - support both positional and flag-based
+    // Positional: <symbol> <buy|sell> <volume> [sl] [tp] [comment]
+    // Flags: --sl <price> --tp <price> --comment <text>
+    let symbol, side, volume, sl, tp, comment;
+    
+    const positionalArgs = [];
+    for (let i = 0; i < args.length; i++) {
+      const arg = args[i];
+      if (arg === '--sl' && args[i + 1]) {
+        sl = args[++i];
+      } else if (arg === '--tp' && args[i + 1]) {
+        tp = args[++i];
+      } else if (arg === '--comment' && args[i + 1]) {
+        comment = args[++i];
+      } else if (!arg.startsWith('--')) {
+        positionalArgs.push(arg);
+      }
+    }
+    
+    // Assign positional args
+    [symbol, side, volume] = positionalArgs.slice(0, 3);
+    // If sl/tp/comment not set via flags, try positional
+    if (!sl && positionalArgs[3]) sl = positionalArgs[3];
+    if (!tp && positionalArgs[4]) tp = positionalArgs[4];
+    if (!comment && positionalArgs[5]) comment = positionalArgs[5];
+    
     if (!symbol || !side || !volume) {
-      console.error('Usage: trade.js open <symbol> <buy|sell> <volume> [sl] [tp] [comment]');
+      console.error('Usage: trade.js open <symbol> <buy|sell> <volume> [--sl <price>] [--tp <price>] [--comment <text>]');
+      console.error('       or: trade.js open <symbol> <buy|sell> <volume> <sl> <tp> [comment]');
       console.error('Volume is in UNITS: 1000 = 0.01 lots, 10000 = 0.1 lots, 100000 = 1 lot');
       process.exit(1);
     }
