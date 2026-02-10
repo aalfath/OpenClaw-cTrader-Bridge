@@ -103,6 +103,30 @@ const commands = {
     if (comment) params.comment = comment;
     
     const result = await bridge.openPosition(params);
+    
+    // Verify SL/TP was set correctly
+    if (result.positionId && (sl || tp)) {
+      const positions = await bridge.getPositions();
+      const openedPos = positions.positions?.find(p => p.positionId == result.positionId);
+      if (openedPos) {
+        const warnings = [];
+        if (sl && !openedPos.stopLoss) warnings.push('SL NOT SET!');
+        if (tp && !openedPos.takeProfit) warnings.push('TP NOT SET!');
+        if (sl && openedPos.stopLoss && Math.abs(openedPos.stopLoss - parseFloat(sl)) > 0.0001) {
+          warnings.push(`SL mismatch: requested ${sl}, got ${openedPos.stopLoss}`);
+        }
+        if (tp && openedPos.takeProfit && Math.abs(openedPos.takeProfit - parseFloat(tp)) > 0.0001) {
+          warnings.push(`TP mismatch: requested ${tp}, got ${openedPos.takeProfit}`);
+        }
+        if (warnings.length > 0) {
+          result.warnings = warnings;
+          console.error('⚠️ SL/TP VERIFICATION FAILED:', warnings.join(', '));
+        } else {
+          result.verified = { stopLoss: openedPos.stopLoss, takeProfit: openedPos.takeProfit };
+        }
+      }
+    }
+    
     console.log(JSON.stringify(result, null, 2));
     await bridge.disconnect();
   },

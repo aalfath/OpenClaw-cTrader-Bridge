@@ -1,97 +1,97 @@
 {
   "lastPrices": {
-    "EURJPY": 185.9675,
-    "GBPJPY": 213.699,
-    "EURGBP": 0.87019,
-    "AUDNZD": 1.170755,
-    "AUDJPY": 110.625,
-    "NZDJPY": 94.49350000000001,
-    "EURCHF": 0.913305,
-    "GBPCHF": 1.0495549999999998,
-    "CADJPY": 115.19200000000001,
-    "CHFJPY": 203.63
+    "EURJPY": 184.768,
+    "GBPJPY": 212.2875,
+    "EURGBP": 0.87033,
+    "AUDNZD": 1.171265,
+    "AUDJPY": 109.7645,
+    "NZDJPY": 93.718,
+    "EURCHF": 0.91343,
+    "GBPCHF": 1.0495299999999999,
+    "CADJPY": 114.473,
+    "CHFJPY": 202.291
   },
   "keyLevels": {
     "EURJPY": {
       "recentHigh": 186.236,
       "recentLow": 184.355,
-      "currentClose": 185.964,
-      "prevClose": 185.743,
-      "prevHigh": 185.853,
-      "prevLow": 185.553
+      "currentClose": 184.763,
+      "prevClose": 185.419,
+      "prevHigh": 185.998,
+      "prevLow": 185.404
     },
     "GBPJPY": {
       "recentHigh": 214.433,
       "recentLow": 211.606,
-      "currentClose": 213.696,
-      "prevClose": 213.483,
-      "prevHigh": 213.564,
-      "prevLow": 213.17
+      "currentClose": 212.282,
+      "prevClose": 213.11,
+      "prevHigh": 213.729,
+      "prevLow": 213.08
     },
     "EURGBP": {
       "recentHigh": 0.87416,
       "recentLow": 0.86331,
-      "currentClose": 0.87017,
-      "prevClose": 0.86987,
-      "prevHigh": 0.87129,
-      "prevLow": 0.86955
+      "currentClose": 0.87031,
+      "prevClose": 0.87001,
+      "prevHigh": 0.87036,
+      "prevLow": 0.86915
     },
     "AUDNZD": {
       "recentHigh": 1.17342,
       "recentLow": 1.16178,
-      "currentClose": 1.17073,
-      "prevClose": 1.17101,
-      "prevHigh": 1.17187,
-      "prevLow": 1.17091
+      "currentClose": 1.17119,
+      "prevClose": 1.17167,
+      "prevHigh": 1.17342,
+      "prevLow": 1.16983
     },
     "AUDJPY": {
       "recentHigh": 110.792,
       "recentLow": 108.048,
-      "currentClose": 110.622,
-      "prevClose": 110.571,
-      "prevHigh": 110.621,
-      "prevLow": 110.468
+      "currentClose": 109.762,
+      "prevClose": 110.378,
+      "prevHigh": 110.661,
+      "prevLow": 110.293
     },
     "NZDJPY": {
       "recentHigh": 94.974,
       "recentLow": 92.855,
-      "currentClose": 94.491,
-      "prevClose": 94.404,
-      "prevHigh": 94.416,
-      "prevLow": 94.299
+      "currentClose": 93.713,
+      "prevClose": 94.21,
+      "prevHigh": 94.543,
+      "prevLow": 93.714
     },
     "EURCHF": {
       "recentHigh": 0.91813,
       "recentLow": 0.91199,
-      "currentClose": 0.91328,
-      "prevClose": 0.9126,
-      "prevHigh": 0.91393,
-      "prevLow": 0.91243
+      "currentClose": 0.91337,
+      "prevClose": 0.91309,
+      "prevHigh": 0.9135,
+      "prevLow": 0.91199
     },
     "GBPCHF": {
-      "recentHigh": 1.06129,
+      "recentHigh": 1.06121,
       "recentLow": 1.04602,
-      "currentClose": 1.04954,
-      "prevClose": 1.04903,
-      "prevHigh": 1.05004,
-      "prevLow": 1.04843
+      "currentClose": 1.04948,
+      "prevClose": 1.04951,
+      "prevHigh": 1.05027,
+      "prevLow": 1.04834
     },
     "CADJPY": {
       "recentHigh": 115.32,
       "recentLow": 114.128,
-      "currentClose": 115.189,
-      "prevClose": 114.986,
-      "prevHigh": 115.049,
-      "prevLow": 114.81
+      "currentClose": 114.472,
+      "prevClose": 114.866,
+      "prevHigh": 115.218,
+      "prevLow": 114.677
     },
     "CHFJPY": {
-      "recentHigh": 203.643,
+      "recentHigh": 203.658,
       "recentLow": 201.364,
-      "currentClose": 203.624,
-      "prevClose": 203.406,
-      "prevHigh": 203.471,
-      "prevLow": 203.208
+      "currentClose": 202.299,
+      "prevClose": 203.078,
+      "prevHigh": 203.658,
+      "prevLow": 202.858
     }
   },
-  "lastScan": "2026-02-10T00:31:14.462Z"
+  "lastScan": "2026-02-10T05:31:37.795Z"
 }

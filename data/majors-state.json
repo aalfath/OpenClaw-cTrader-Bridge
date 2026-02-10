@@ -1,89 +1,89 @@
 {
   "lastPrices": {
-    "EURUSD": 1.190235,
-    "GBPUSD": 1.3678,
-    "USDJPY": 156.24349999999998,
-    "USDCHF": 0.7673449999999999,
-    "AUDUSD": 0.708145,
-    "USDCAD": 1.356425,
-    "NZDUSD": 0.604795,
-    "XAUUSD": 5036.04
+    "EURUSD": 1.190795,
+    "GBPUSD": 1.368185,
+    "USDJPY": 155.11700000000002,
+    "USDCHF": 0.767035,
+    "AUDUSD": 0.7073149999999999,
+    "USDCAD": 1.3555899999999999,
+    "NZDUSD": 0.603905,
+    "XAUUSD": 5018.799999999999
   },
   "keyLevels": {
     "EURUSD": {
       "recentHigh": 1.19266,
       "recentLow": 1.17656,
-      "currentClose": 1.19048,
-      "prevClose": 1.19148,
-      "prevHigh": 1.19222,
-      "prevLow": 1.19034
+      "currentClose": 1.19073,
+      "prevClose": 1.19057,
+      "prevHigh": 1.19145,
+      "prevLow": 1.18966
     },
     "GBPUSD": {
       "recentHigh": 1.37003,
       "recentLow": 1.35086,
       "currentClose": 1.36823,
-      "prevClose": 1.36949,
-      "prevHigh": 1.37003,
-      "prevLow": 1.36644
+      "prevClose": 1.36845,
+      "prevHigh": 1.36968,
+      "prevLow": 1.36721
     },
     "USDJPY": {
       "recentHigh": 157.66,
-      "recentLow": 155.522,
-      "currentClose": 156.14,
-      "prevClose": 155.886,
-      "prevHigh": 156.032,
-      "prevLow": 155.64
+      "recentLow": 155.146,
+      "currentClose": 155.269,
+      "prevClose": 155.733,
+      "prevHigh": 156.294,
+      "prevLow": 155.674
     },
     "USDCHF": {
       "recentHigh": 0.77871,
-      "recentLow": 0.76575,
-      "currentClose": 0.76709,
-      "prevClose": 0.76602,
-      "prevHigh": 0.76747,
-      "prevLow": 0.76575
+      "recentLow": 0.76568,
+      "currentClose": 0.76698,
+      "prevClose": 0.76693,
+      "prevHigh": 0.76772,
+      "prevLow": 0.76578
     },
     "AUDUSD": {
       "recentHigh": 0.70987,
       "recentLow": 0.6897,
-      "currentClose": 0.70843,
-      "prevClose": 0.70931,
-      "prevHigh": 0.70987,
-      "prevLow": 0.70825
+      "currentClose": 0.70744,
+      "prevClose": 0.70878,
+      "prevHigh": 0.70936,
+      "prevLow": 0.70761
     },
     "USDCAD": {
       "recentHigh": 1.37245,
-      "recentLow": 1.35526,
-      "currentClose": 1.3562,
-      "prevClose": 1.3555,
-      "prevHigh": 1.3575,
-      "prevLow": 1.35526
+      "recentLow": 1.35484,
+      "currentClose": 1.35552,
+      "prevClose": 1.35588,
+      "prevHigh": 1.35683,
+      "prevLow": 1.35542
     },
     "NZDUSD": {
       "recentHigh": 0.60599,
       "recentLow": 0.59281,
-      "currentClose": 0.60531,
-      "prevClose": 0.60563,
-      "prevHigh": 0.60599,
-      "prevLow": 0.60453
+      "currentClose": 0.60386,
+      "prevClose": 0.60493,
+      "prevHigh": 0.60562,
+      "prevLow": 0.60124
     },
     "XAUUSD": {
       "recentHigh": 5086.72,
       "recentLow": 4655.4,
-      "currentClose": 5042.38,
-      "prevClose": 5057.94,
-      "prevHigh": 5086.72,
-      "prevLow": 5044.24
+      "currentClose": 5033.94,
+      "prevClose": 5032.76,
+      "prevHigh": 5075.02,
+      "prevLow": 4987.72
     }
   },
-  "lastScan": "2026-02-10T00:30:53.394Z",
+  "lastScan": "2026-02-10T05:30:52.096Z",
   "levelUpdates": {
-    "EURUSD": 1770681657999,
-    "GBPUSD": 1770681659000,
-    "USDJPY": 1770681659998,
-    "USDCHF": 1770681660996,
-    "AUDUSD": 1770681661997,
-    "USDCAD": 1770681662996,
-    "NZDUSD": 1770681663997,
-    "XAUUSD": 1770681664997
+    "EURUSD": 1770699660744,
+    "GBPUSD": 1770699661752,
+    "USDJPY": 1770699662744,
+    "USDCHF": 1770699663747,
+    "AUDUSD": 1770699664747,
+    "USDCAD": 1770699665747,
+    "NZDUSD": 1770699666749,
+    "XAUUSD": 1770699667746
   }
 }

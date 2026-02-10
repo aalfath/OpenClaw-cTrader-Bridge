@@ -57,6 +57,34 @@ This file is auto-updated after each trade or significant market observation. Us
 
 ---
 
+## 2026-02-10: Always Verify SL/TP After Opening
+
+**Situation:** Opened USDCHF Sell at 04:47 CET with SL at 0.7678 (20 pips). Position was closed 36 seconds later at 0.76584 (only 0.8 pips loss). The SL was apparently never set.
+
+**What went wrong:**
+- Trade was opened but SL/TP was not verified
+- Position closed almost immediately (by broker? by monitor?)
+- Lost visibility into what actually happened
+
+**Root cause hypotheses:**
+1. SL/TP wasn't passed correctly to the trade command
+2. Broker rejected the SL (minimum distance requirement?)
+3. Some parsing/format issue with price values
+
+**Fix applied:**
+- Updated trade.js to verify SL/TP after opening
+- Added warnings if SL/TP doesn't match requested values
+- Now logs verification result in the output
+
+**Lesson:**
+- ALWAYS verify protective orders are set after opening
+- Log and alert if SL/TP verification fails
+- Never assume the broker accepted the order as requested
+
+**Rule:** After opening any position, confirm `stopLoss` and `takeProfit` fields are populated correctly before proceeding.
+
+---
+
 ## 2026-02-09: R:R Below Minimum Still Got Stopped
 
 **Situation:** Morning EURUSD trade had 0.82:1 R:R (below 1.5:1 minimum).

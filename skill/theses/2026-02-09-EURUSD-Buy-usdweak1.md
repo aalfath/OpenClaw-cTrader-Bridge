@@ -57,3 +57,5 @@ This is not an isolated EURUSD move — it's a broad USD rejection across all as
 - 2026-02-09T22:02:00Z: Monitor check — Position at 1.19142 (+1.95 pips, +$26). Thesis valid: price above 1.1850 invalidation. Slight pullback from earlier, normal price action. Note: position comment field shows "--tp" instead of thesis filename (bug). No action needed.
 - 2026-02-09T22:31:00Z: Monitor check — Position at 1.19135 (+1.25 pips, -$29 net). Thesis valid: price above 1.1850 invalidation. Late Sunday night (11:31 PM CET), low volatility. Holding overnight.
 - 2026-02-10T00:02:00Z: Monitor check — Position at 1.19143 (+2.1 pips, +$15 net). Thesis valid: price well above 1.1850 invalidation. Start of week, Asian session. Holding.
+- 2026-02-10T01:31:00Z: Monitor check — Position at 1.18983 (-14 pips, -$262). Thesis valid: price at 1.18983, still 48 pips above 1.1850 invalidation. Normal overnight pullback, low liquidity Asian session. SL/TP intact. No action.
+- 2026-02-10T03:32:00Z: Monitor check — Position at 1.191505 (+2.85 pips, +$22 net). Thesis valid: recovered from overnight pullback, price 30+ pips above 1.1850 invalidation. Holding.
