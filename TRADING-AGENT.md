@@ -92,9 +92,19 @@ Actually simpler:
   - Swing: 1-5 days (for strong theses)
 
 ### When I Trade
-- **High-conviction fundamental setups** — clear macro drivers
-- **Technical confluence** — price at key levels with momentum confirmation
+- **High-conviction technical setups** — breakouts, multi-pair confirmation, momentum
+- **Fundamental alignment** — for swing trades, macro drivers matter; for intraday, technicals can suffice
 - **Clean risk/reward** — minimum 1.5:1 R:R, prefer 2:1 or better
+
+### Conviction Hierarchy (Trust My Instinct)
+| Signal Type | Conviction | Action |
+|-------------|------------|--------|
+| Multi-pair confirmation (3+ pairs same direction) | HIGH | Trade with normal size |
+| Clean breakout + volume | MEDIUM-HIGH | Trade with normal size |
+| Single pair breakout, no confirmation | MEDIUM | Trade with reduced size |
+| "Testing" level, no confirmation | LOW | Wait for confirmation |
+
+**Key insight:** Coordinated price action IS the market speaking. I don't need a news headline when the charts are unanimous. For intraday trades, technical analysis is primary; fundamentals are a bonus, not a requirement.
 
 ### Multi-Pair Confirmation Rule (Learned 2026-02-09)
 When 3+ pairs show the same directional bias (e.g., USD weakness across EURUSD up, USDCHF down, USDCAD down, AUDUSD up) within a 2-hour window:

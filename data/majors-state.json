@@ -1,13 +1,13 @@
 {
   "lastPrices": {
-    "EURUSD": 1.19052,
-    "GBPUSD": 1.36812,
-    "USDJPY": 156.1565,
-    "USDCHF": 0.767165,
-    "AUDUSD": 0.70836,
-    "USDCAD": 1.35626,
-    "NZDUSD": 0.604955,
-    "XAUUSD": 5039.875
+    "EURUSD": 1.190235,
+    "GBPUSD": 1.3678,
+    "USDJPY": 156.24349999999998,
+    "USDCHF": 0.7673449999999999,
+    "AUDUSD": 0.708145,
+    "USDCAD": 1.356425,
+    "NZDUSD": 0.604795,
+    "XAUUSD": 5036.04
   },
   "keyLevels": {
     "EURUSD": {
@@ -75,7 +75,7 @@
       "prevLow": 5044.24
     }
   },
-  "lastScan": "2026-02-10T00:25:06.908Z",
+  "lastScan": "2026-02-10T00:30:53.394Z",
   "levelUpdates": {
     "EURUSD": 1770681657999,
     "GBPUSD": 1770681659000,
