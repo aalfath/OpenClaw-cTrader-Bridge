@@ -164,6 +164,24 @@ const commands = {
       process.exit(1);
     }
     await bridge.connect();
+    
+    // SAFETY: Verify position exists and show details before closing
+    const positions = await bridge.getPositions();
+    const targetPos = positions.positions?.find(p => p.positionId == positionId);
+    
+    if (!targetPos) {
+      console.error(`Error: Position not found: ${positionId}`);
+      console.error('\nOpen positions:');
+      positions.positions?.forEach(p => {
+        console.error(`  ${p.positionId}: ${p.symbol} ${p.side} ${p.lots}L @ ${p.entryPrice} (P&L: ${p.netProfit?.toFixed(2)})`);
+      });
+      process.exit(1);
+    }
+    
+    // Show what we're about to close
+    console.error(`Closing: ${targetPos.symbol} ${targetPos.side} ${targetPos.lots}L @ ${targetPos.entryPrice}`);
+    console.error(`  Current P&L: ${targetPos.netProfit?.toFixed(2)}`);
+    
     const result = await bridge.closePosition(parseInt(positionId));
     console.log(JSON.stringify(result, null, 2));
     await bridge.disconnect();
@@ -176,12 +194,61 @@ const commands = {
     await bridge.disconnect();
   },
 
-  async modify(positionId, sl, tp) {
+  async modify(...args) {
+    // Parse arguments - support both positional and flag-based
+    // Positional: <positionId> [sl] [tp]
+    // Flags: --sl <price> --tp <price>
+    let positionId, sl, tp;
+    
+    const positionalArgs = [];
+    for (let i = 0; i < args.length; i++) {
+      const arg = args[i];
+      if (arg === '--sl' && args[i + 1]) {
+        sl = args[++i];
+      } else if (arg === '--tp' && args[i + 1]) {
+        tp = args[++i];
+      } else if (!arg.startsWith('--')) {
+        positionalArgs.push(arg);
+      }
+    }
+    
+    // First positional arg is positionId
+    positionId = positionalArgs[0];
+    // If sl/tp not set via flags, try positional
+    if (!sl && positionalArgs[1]) sl = positionalArgs[1];
+    if (!tp && positionalArgs[2]) tp = positionalArgs[2];
+    
     if (!positionId) {
-      console.error('Usage: trade.js modify <positionId> [sl] [tp]');
+      console.error('Usage: trade.js modify <positionId> [--sl <price>] [--tp <price>]');
+      console.error('       or: trade.js modify <positionId> <sl> <tp>');
       process.exit(1);
     }
+    
+    if (!sl && !tp) {
+      console.error('Error: Must specify at least --sl or --tp');
+      process.exit(1);
+    }
+    
     await bridge.connect();
+    
+    // SAFETY: Verify position exists and show details before modifying
+    const positions = await bridge.getPositions();
+    const targetPos = positions.positions?.find(p => p.positionId == positionId);
+    
+    if (!targetPos) {
+      console.error(`Error: Position not found: ${positionId}`);
+      console.error('\nOpen positions:');
+      positions.positions?.forEach(p => {
+        console.error(`  ${p.positionId}: ${p.symbol} ${p.side} ${p.lots}L @ ${p.entryPrice}`);
+      });
+      process.exit(1);
+    }
+    
+    // Show what we're about to modify
+    console.error(`Modifying: ${targetPos.symbol} ${targetPos.side} ${targetPos.lots}L (ID: ${positionId})`);
+    console.error(`  Current SL: ${targetPos.stopLoss || 'none'} → ${sl ? `New: ${sl}` : 'unchanged'}`);
+    console.error(`  Current TP: ${targetPos.takeProfit || 'none'} → ${tp ? `New: ${tp}` : 'unchanged'}`);
+    
     const params = {};
     if (sl) params.stopLoss = parseFloat(sl);
     if (tp) params.takeProfit = parseFloat(tp);
@@ -223,10 +290,10 @@ async function main() {
     console.log('  mtf <symbol>                      - Multi-timeframe bars (Daily/H4/M15)');
     console.log('');
     console.log('Trade Execution:');
-    console.log('  open <symbol> <buy|sell> <vol> [sl] [tp] [comment]');
-    console.log('  close <positionId>                - Close position');
+    console.log('  open <symbol> <buy|sell> <vol> [--sl <p>] [--tp <p>] [--comment <t>]');
+    console.log('  close <positionId>                - Close position (shows details first)');
     console.log('  closeall                          - Close all positions');
-    console.log('  modify <positionId> [sl] [tp]     - Modify SL/TP');
+    console.log('  modify <positionId> [--sl <p>] [--tp <p>] - Modify SL/TP (verifies ID)');
     console.log('  partial <positionId> <volume>     - Partial close');
     console.log('');
     console.log('Volume is in UNITS: 1000 = 0.01 lots, 10000 = 0.1 lots, 100000 = 1 lot');

@@ -95,6 +95,26 @@ This file is auto-updated after each trade or significant market observation. Us
 
 ---
 
+## 2026-02-10: Fat-Finger Error — Verify Before Modifying
+
+**Situation:** During position management, I tried to modify USDJPY's SL but mistakenly typed the EURUSD position ID (579952174) with `--sl 1.1912`.
+
+**What happened:** The command modified EURUSD's **TP** to 1.1912 (near market price), and the position immediately closed at breakeven (-$28 net).
+
+**What I did wrong:**
+- Didn't double-check the position ID before running modify
+- Didn't verify which field I was modifying (SL vs TP)
+- Rushed the command without reviewing
+
+**Lesson:**
+- **ALWAYS verify position ID** before running modify/close commands
+- **Double-check the flag** (`--sl` vs `--tp`) matches intent
+- Modification commands are irreversible — take 2 seconds to confirm
+
+**Rule:** Before any position modification: verify positionId + field + value. No rushing.
+
+---
+
 ## Template for Future Lessons
 
 ### [DATE]: [Title]
@@ -108,3 +128,24 @@ This file is auto-updated after each trade or significant market observation. Us
 **Lesson:** What should I do differently next time?
 
 **Rule Update:** (if applicable) What rule should be added/modified?
+
+---
+
+## 2026-02-10: SL/TP Modification Rejection
+
+**Situation:** Opened USDJPY Sell with requested SL 155.30 (56 pips), TP 153.50 (124 pips). Broker set different levels: SL 156.311 (155 pips), TP 153.223 (153 pips).
+
+**What I tried:** Multiple modification attempts with various price formats — all returned "InvalidStopLossTakeProfit" error.
+
+**What I did:** Partial closed from 2.5 lots to 0.9 lots to bring risk back to 1% with the wider SL.
+
+**Lesson:**
+- This broker/demo account may have restrictions on SL/TP modification
+- The initial SL/TP values are being overridden by the broker during order execution
+- Need to investigate why the CLI's SL/TP values aren't being respected on open
+- Workaround: Adjust position size after opening if SL is wider than intended
+
+**Investigation needed:**
+- Check if demo account has different rules than live
+- Check if there's a minimum SL/TP distance % requirement
+- Review trade.js to see how SL/TP are being passed to the bridge
